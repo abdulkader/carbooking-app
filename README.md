@@ -42,9 +42,10 @@ npm run dev
 
 Contributions are welcome! If you find a bug or have a suggestion, please open an issue or submit a pull request.
 
-## License
+## TODO
 
-This project is licensed under the MIT License.
+1. Since API is not available, currently the data is saved in the local storage.
+2. You can clear the local storage to start fresh.
 
 
 ## Docker
