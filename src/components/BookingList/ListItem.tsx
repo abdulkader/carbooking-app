@@ -5,11 +5,18 @@ import dayjs from "dayjs";
 
 interface ListItemProps {
   car: Car;
-  onSelect: (car: Car) => void;
+  onSelect: (car: Car | null) => void;
   selectedCar?: Car | null;
 }
 
 export const ListItem: FC<ListItemProps> = ({ car, onSelect, selectedCar }) => {
+  const handleRowSelect = () => {
+    if (selectedCar?.uid === car.uid) {
+      onSelect(null);
+      return;
+    }
+    onSelect(car);
+  };
   return (
     <tr
       className={cx("border-b cursor-pointer", {
@@ -17,7 +24,7 @@ export const ListItem: FC<ListItemProps> = ({ car, onSelect, selectedCar }) => {
         "bg-white": selectedCar?.uid !== car.uid,
       })}
       key={car.uid}
-      onClick={() => onSelect(car)}
+      onClick={handleRowSelect}
     >
       <td className="py-4 px-6">{car.model}</td>
       <td className="py-4 px-6">{car.brand}</td>

@@ -106,6 +106,10 @@ export const CarsMapList = () => {
           marker,
           infowindow,
         });
+        infowindow.addListener("closeclick", () => {
+          // Handle the close click event on the info window
+          appDispatch({ type: SET_SELECTED_CAR, payload: null });
+        });
       });
     }
   }, [availableCars, appState.isGoogleMapLoaded, appDispatch]);

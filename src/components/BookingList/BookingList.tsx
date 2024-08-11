@@ -15,11 +15,11 @@ export const BookingList = () => {
   const { carsList, selectedCar } = appState;
   const formRef = useRef<HTMLFormElement>(null);
 
-  const handleRowSelect = (car: Car) => {
+  const handleRowSelect = (car: Car | null) => {
     // Set the return location to null initially
     appDispatch({
       type: SET_SELECTED_CAR,
-      payload: { ...car, returnLocation: null },
+      payload: car ? { ...car, returnLocation: null } : null,
     });
   };
 
