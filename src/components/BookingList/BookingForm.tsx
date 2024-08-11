@@ -11,14 +11,14 @@ export const BookingForm = forwardRef<HTMLFormElement, BookingFormProps>(
   ({ onSubmit, selectedCar, onReturn }, ref) => {
     return (
       <form
-        className="w-full flex justify-between items-center py-3 px-4"
+        className="w-full flex justify-between items-center py-3 md:px-4 px-1"
         onSubmit={onSubmit}
         ref={ref}
         id="booking-form"
         data-testid="booking-form"
       >
-        <div className="flex items-center justify-start w-fit">
-          <label htmlFor="name" className="text-sm px-3 whitespace-nowrap">
+        <div className="flex items-center justify-start w-fit px-1">
+          <label htmlFor="name" className="text-sm md:px-3 px-1 whitespace-nowrap">
             Booking Name
           </label>
           <input
@@ -30,7 +30,7 @@ export const BookingForm = forwardRef<HTMLFormElement, BookingFormProps>(
             data-testid="booking-name"
           />
         </div>
-        <div className="flex items-center justify-start w-fit gap-4">
+        <div className="flex items-center justify-start w-fit gap-1 md:gap-4">
           <button
             type="submit"
             className="flex w-full justify-center rounded-md bg-slate-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 disabled:bg-slate-400 disabled:text-slate-300"
