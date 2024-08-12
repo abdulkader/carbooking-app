@@ -64,8 +64,7 @@ The application will be available at `http://localhost:3000/`.
 To build and run the Docker image for development, use the following commands:
 
 ```bash
-docker build -t carbooking-app:latest . -f Dockerfile.dev
-docker run -p 5173:5173 -it --rm carbooking-app:latest
+docker-compose up app
 ```
 
 The application will be available at `http://localhost:5173/`.
